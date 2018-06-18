@@ -1,0 +1,42 @@
+//	
+//	BUBBLE SORT PROGRAM: 
+//
+//		$a0 = size of the array
+//		$t0 = base address of the array
+//		$t1 = index/counter for current position
+//		$s0 = swap flag
+//
+2004000A//		addi	$a0 	$zero	0x000A	
+20080000//		addi	$t0		$zero	0x0000
+		//first:
+20100000//		addi	$s0		$zero	0x0000
+20090000//		addi	$t1		$zero	0x0000
+01284820//		add		$t1		$t1		$t0
+		//second:
+8D2A0000//		lw		$t2		0x0000	$t1		
+8D2B0001//		lw		$t3		0x0001	$t1
+016A602A//		slt		$t4		$t3		$t2
+11800003//		beq		$t4		$zero	noswap(3)
+AD2A0001//		sw		$t2		0x0001	$t1
+AD2B0000//		sw		$t3		0x0000	$t1
+20100001//		addi	$s0		$zero	0x0001
+		//noswap:
+21290001//		addi	$t1		$t1		0x0001
+1524FFF7//		bne		$t1		$a0		second(-9)
+1600FFF3//		bne 	$s0 	$zero 	first(-13)
+2001FFFF//		addi	$at		$zero	0xFFFF
+
+
+// check for cache
+8C1F0000//lw $ra 0x0000 $zero
+8C1E0001//lw $fp 0x0001 $zero
+8C1D0002//lw $sp 0x0002 $zero
+8C1C0003//lw $gp 0x0003 $zero
+8C1B0004//lw $k1 0x0004 $zero
+8C1A0005//lw $k0 0x0005 $zero
+8C190006//lw $t9 0x0006 $zero
+8C180007//lw $t8 0x0007 $zero
+8C170008//lw $s7 0x0008 $zero
+8C160009//lw $s6 0x0009 $zero
+8C15000A//lw $s5 0x000a $zero
+

@@ -1,0 +1,5 @@
+//twoAdds.mem	
+//
+
+20100008	//addi	$s0	$zero	0x0008
+20110004	//addi 	$s1	$zero	0x0004
